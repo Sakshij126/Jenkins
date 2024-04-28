@@ -17,7 +17,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Add deployment steps here
-                bat 'echo Deploying...'
+                // Copy HTML files to XAMPP htdocs directory
+                bat 'xcopy /s /y "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\HTML DEPLOYMENT DECLARATIVE PIPELINE" "C:\\xampp\\htdocs"'
             }
         }
         stage('Monitor') {
